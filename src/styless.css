@@ -23,3 +23,143 @@ a {
 ul {
   font-size: 20px;
 }
+p {
+  font-size: 30px;
+}
+main {
+  margin-left: 10px;
+}
+.goBack {
+  font-size: 25px;
+  color: black;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 5px 12px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.goBack:hover,
+.goBack:focus {
+  background-color: #ebe9e9;
+}
+.goBack:active {
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+.mainInfo {
+  margin-top: 10px;
+  display: flex;
+}
+.description {
+  margin-left: 15px;
+}
+.genres {
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  font-size: 30px;
+  list-style: none;
+}
+.Add {
+  margin-top: 40px;
+  border-top: 2px solid #373737;
+  border-bottom: 2px solid #373737;
+}
+.Add h3 {
+  margin-top: 20px;
+}
+.Add ul {
+  font-size: 35px;
+  font-weight: 500;
+}
+.Add a {
+  color: black;
+}
+.Add a:hover,
+.Add a:focus {
+  text-shadow: 0 0 10px rgba(255, 166, 0, 0.78), 0 0 5px rgba(255, 165, 0, 0.5);
+}
+.cast,
+.rev {
+  list-style: none;
+}
+.name {
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+.char {
+  margin-top: 10px;
+  margin-bottom: 55px;
+}
+.rev h3 {
+  font-size: 30px;
+  margin-bottom: 0;
+}
+.rev p {
+  font-size: 25px;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+.movieList {
+  font-size: 25px;
+}
+.movieList a {
+  color: black;
+}
+.movieList a:hover,
+.movieList a:focus {
+  text-shadow: 0 0 10px rgba(255, 166, 0, 0.78), 0 0 5px rgba(255, 165, 0, 0.5);
+}
+.SearchForm {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  border: 2px solid #373737;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.SearchForm-button {
+  display: inline-block;
+  width: 90px;
+  height: 48px;
+  border: 0;
+  background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  outline: none;
+}
+
+.SearchForm-button:hover {
+  opacity: 1;
+}
+.SearchForm-input {
+  display: inline-block;
+  width: 100%;
+  font: inherit;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.SearchForm-input::placeholder {
+  font: inherit;
+  font-size: 18px;
+}
+.link {
+  color: black;
+}
+.link.active {
+  color: rgb(255, 165, 0);
+}

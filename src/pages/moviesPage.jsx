@@ -13,9 +13,6 @@ const Movies = () => {
   const onSubmit = input => {
     setQuery(input);
   };
-  console.log(query);
-  console.log(searchParams.get('query'));
-  searchParams.size ? console.log(true) : console.log(false);
   useEffect(() => {
     if (!searchParams.get('query')) {
       setQuery('');

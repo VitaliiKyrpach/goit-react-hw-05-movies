@@ -14,6 +14,7 @@ const Home = () => {
     };
     fetch();
   }, []);
+
   return (
     <div>
       <h2>Trending today</h2>

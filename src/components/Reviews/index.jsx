@@ -9,22 +9,25 @@ export const Reviews = () => {
     const fetch = async () => {
       const data = await getMovies(string);
       setRev(data.data.results);
-      console.log(data.data.results);
     };
     fetch();
   }, [movieId, string]);
   return (
-    <ul>
-      {rev && rev.length
-        ? rev.map((item, idx) => {
+    <div>
+      {rev && rev.length ? (
+        <ul className="rev">
+          {rev.map((item, idx) => {
             return (
               <li key={idx}>
                 <h3>{item.author}</h3>
                 <p>{item.content}</p>
               </li>
             );
-          })
-        : "Sorry! We don't have any reviews for this movie"}
-    </ul>
+          })}
+        </ul>
+      ) : (
+        <p>"Sorry! We don't have any reviews for this movie"</p>
+      )}
+    </div>
   );
 };

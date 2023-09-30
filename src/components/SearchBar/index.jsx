@@ -13,8 +13,9 @@ export const SearchBar = ({ Submit }) => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="SearchForm">
         <input
+          className="SearchForm-input"
           type="text"
           autoComplete="off"
           autoFocus
@@ -22,7 +23,9 @@ export const SearchBar = ({ Submit }) => {
           value={input}
           onChange={updateQuery}
         />
-        <button type="submit">Search</button>
+        <button type="submit" className="SearchForm-button">
+          Search
+        </button>
       </form>
     </>
   );
