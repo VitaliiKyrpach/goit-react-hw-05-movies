@@ -12,7 +12,7 @@ export const Reviews = () => {
       console.log(data.data.results);
     };
     fetch();
-  }, [movieId]);
+  }, [movieId, string]);
   return (
     <ul>
       {rev && rev.length
