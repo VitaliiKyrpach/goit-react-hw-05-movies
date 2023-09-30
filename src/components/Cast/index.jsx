@@ -11,7 +11,7 @@ export const Cast = () => {
       setCast(data.data.cast);
     };
     fetch();
-  }, [movieId]);
+  }, [movieId, string]);
   return (
     <ul>
       {cast &&
