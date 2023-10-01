@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCredits } from 'services/api';
+
 export const Cast = () => {
   const defaultImg =
     'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';
