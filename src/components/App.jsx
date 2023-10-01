@@ -3,9 +3,9 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import { Layout } from './Layout';
 import { Cast } from './Cast';
 import { Reviews } from './Reviews';
-
+import Movies from 'pages/MoviesPage';
 const Home = lazy(() => import('../pages/HomePage'));
-const Movies = lazy(() => import('../pages/MoviesPage'));
+// const Movies = lazy(() => import('../pages/MoviesPage'));
 const MovieDetails = lazy(() => import('../pages/MovieDetailsPage'));
 
 const Redirect = () => {
