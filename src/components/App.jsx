@@ -1,22 +1,19 @@
-import { lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { lazy, useEffect } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { Layout } from './Layout';
 import { Cast } from './Cast';
 import { Reviews } from './Reviews';
-// import Movies from 'pages/MoviesPage';
-// import Home from 'pages/HomePage';
-// import MovieDetails from 'pages/MovieDetailsPage';
-const Home = lazy(() => import('../pages/HomePage'));
-const Movies = lazy(() => import('../pages/MoviesPage'));
-const MovieDetails = lazy(() => import('../pages/MovieDetailsPage'));
+const Home = lazy(() => import('../pages/homePage'));
+const Movies = lazy(() => import('../pages/moviesPage'));
+const MovieDetails = lazy(() => import('../pages/movieDetailsPage'));
 
-// const Redirect = () => {
-//   const navigate = useNavigate();
-//   useEffect(() => {
-//     navigate('/', { replace: true });
-//   });
-//   return null;
-// };
+const Redirect = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate('/', { replace: true });
+  });
+  return null;
+};
 
 export const App = () => {
   return (
@@ -30,8 +27,12 @@ export const App = () => {
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
-        {/* <Route path="*" element={<Redirect />} /> */}
+        <Route path="*" element={<Redirect />} />
       </Routes>
     </div>
   );
 };
+
+// import Movies from 'pages/MoviesPage';
+// import Home from 'pages/HomePage';
+// import MovieDetails from 'pages/MovieDetailsPage';
