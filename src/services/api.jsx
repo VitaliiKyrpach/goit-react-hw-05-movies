@@ -1,10 +1,9 @@
 import axios from 'axios';
 
-export const getMovies = async (path, query) => {
+export const getData = async (path, query) => {
   const response = await axios({
     method: 'GET',
     url: path,
-    baseURL: 'https://api.themoviedb.org/3/',
     params: { query: query, language: 'en-US' },
     headers: {
       accept: 'application/json',
@@ -13,4 +12,19 @@ export const getMovies = async (path, query) => {
     },
   });
   return response;
+};
+export const getMovieCredits = async movieId => {
+  return await getData(`https://api.themoviedb.org/3/movie/${movieId}/credits`);
+};
+export const getMovieReviews = async movieId => {
+  return await getData(`https://api.themoviedb.org/3/movie/${movieId}/reviews`);
+};
+export const getFindMovie = async query => {
+  return await getData(`https://api.themoviedb.org/3/search/movie`, query);
+};
+export const getTrendMovie = async () => {
+  return await getData(`https://api.themoviedb.org/3/trending/movie/day`);
+};
+export const getMovie = async movieId => {
+  return await getData(`https://api.themoviedb.org/3/movie/${movieId}`);
 };

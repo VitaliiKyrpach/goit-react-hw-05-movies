@@ -1,12 +1,21 @@
-import { lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { lazy, useEffect } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { Layout } from './Layout';
-import { MovieDetails } from './MovieDetails';
 import { Cast } from './Cast';
 import { Reviews } from './Reviews';
 
-const Home = lazy(() => import('../pages/homePage'));
-const Movies = lazy(() => import('../pages/moviesPage'));
+const Home = lazy(() => import('../pages/HomePage'));
+const Movies = lazy(() => import('../pages/MoviesPage'));
+const MovieDetails = lazy(() => import('../pages/MovieDetailsPage'));
+
+const Redirect = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate('/', { replace: true });
+  });
+  return null;
+};
+
 export const App = () => {
   return (
     <div>
@@ -19,6 +28,7 @@ export const App = () => {
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
+        <Route path="*" element={<Redirect />} />
       </Routes>
     </div>
   );

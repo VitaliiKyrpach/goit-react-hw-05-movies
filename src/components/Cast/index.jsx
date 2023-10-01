@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovies } from 'services/api';
+import { getMovieCredits } from 'services/api';
 export const Cast = () => {
   const defaultImg =
     'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';
   const [cast, setCast] = useState();
   const { movieId } = useParams();
-  const string = `movie/${movieId}/credits`;
+
   useEffect(() => {
     const fetch = async () => {
-      const data = await getMovies(string);
+      const data = await getMovieCredits(movieId);
       setCast(data.data.cast);
     };
     fetch();
-  }, [movieId, string]);
+  }, [movieId]);
   return (
     <div>
       {cast && cast.length ? (

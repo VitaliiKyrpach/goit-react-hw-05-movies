@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovies } from 'services/api';
+import { getMovieReviews } from 'services/api';
+
 export const Reviews = () => {
   const [rev, setRev] = useState();
   const { movieId } = useParams();
-  const string = `movie/${movieId}/reviews`;
   useEffect(() => {
     const fetch = async () => {
-      const data = await getMovies(string);
+      const data = await getMovieReviews(movieId);
       setRev(data.data.results);
     };
     fetch();
-  }, [movieId, string]);
+  }, [movieId]);
   return (
     <div>
       {rev && rev.length ? (

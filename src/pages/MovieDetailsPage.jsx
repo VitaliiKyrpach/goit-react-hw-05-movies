@@ -1,21 +1,21 @@
 import { Outlet, useParams, Link, useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
-import { getMovies } from 'services/api';
-export const MovieDetails = () => {
+import { getMovie } from 'services/api';
+
+const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const { movieId } = useParams();
-  const string = `movie/${movieId}`;
   const location = useLocation();
   const backLoc = useRef(location.state?.from ?? '/movies');
   const defaultImg =
     'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';
   useEffect(() => {
     const fetch = async () => {
-      const data = await getMovies(string);
+      const data = await getMovie(movieId);
       setMovie(data.data);
     };
     fetch();
-  }, [movieId, string]);
+  }, [movieId]);
   return (
     <>
       <Link to={backLoc.current} className="goBack">
@@ -58,3 +58,4 @@ export const MovieDetails = () => {
     </>
   );
 };
+export default MovieDetails;

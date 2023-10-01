@@ -1,15 +1,13 @@
 import MovieList from 'components/MoviesList';
-import { getMovies } from '../services/api';
+import { getTrendMovie } from '../services/api';
 import { useEffect, useState } from 'react';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
 
-  const string = 'trending/movie/day';
-
   useEffect(() => {
     const fetch = async () => {
-      const data = await getMovies(string);
+      const data = await getTrendMovie();
       setMovies(data.data.results);
     };
     fetch();
