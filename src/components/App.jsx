@@ -1,12 +1,14 @@
-import { lazy, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { Layout } from './Layout';
 import { Cast } from './Cast';
 import { Reviews } from './Reviews';
 import Movies from 'pages/MoviesPage';
-const Home = lazy(() => import('../pages/HomePage'));
+import Home from 'pages/HomePage';
+import MovieDetails from 'pages/MovieDetailsPage';
+// const Home = lazy(() => import('../pages/HomePage'));
 // const Movies = lazy(() => import('../pages/MoviesPage'));
-const MovieDetails = lazy(() => import('../pages/MovieDetailsPage'));
+// const MovieDetails = lazy(() => import('../pages/MovieDetailsPage'));
 
 const Redirect = () => {
   const navigate = useNavigate();
